@@ -68,7 +68,6 @@
         android:layout_marginTop="20dp"
         android:text="Ingreasar"
         android:background="@drawable/boton_redondo"
-        android:radius="50px"
         app:backgroundTint="#6DB2C5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
@@ -91,7 +90,7 @@
         android:layout_height="188dp"
         android:layout_marginStart="116dp"
         android:layout_marginLeft="116dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logotipo_odin" />
