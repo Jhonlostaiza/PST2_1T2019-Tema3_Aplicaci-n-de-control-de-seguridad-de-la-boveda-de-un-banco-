@@ -6,21 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class activity_bobeda extends AppCompatActivity {
+public class activity_editar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bobeda);
+        setContentView(R.layout.activity_editar);
     }
 
-    public void Editar(View view) {
-        Intent i = new Intent(this, activity_editar.class );
-        startActivity(i);
-    }
-
-    public void CerraSesion(View view) {
+    public void Regresar(View view) {
         Intent i = new Intent(this, MainActivity.class );
         startActivity(i);
     }
+
+
 }
