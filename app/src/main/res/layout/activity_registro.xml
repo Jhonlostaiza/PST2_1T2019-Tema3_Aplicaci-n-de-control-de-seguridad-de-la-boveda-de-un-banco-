@@ -12,10 +12,11 @@
         android:layout_height="47dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="216dp"
+        android:drawableLeft="@drawable/user"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="USUARIO"
+        android:text="   USUARIO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,9 +27,10 @@
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/icono_correo"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="xxx@correo.com"
+        android:text="   xxx@correo.com"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
@@ -39,9 +41,10 @@
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/icono_clave"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="CONTASEÑA"
+        android:text="   CONTASEÑA"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
@@ -89,9 +92,10 @@
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/dni"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="DNI"
+        android:text="   DNI"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -101,7 +105,7 @@
         android:layout_height="156dp"
         android:layout_marginStart="132dp"
         android:layout_marginLeft="132dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logotipo_odin" />
