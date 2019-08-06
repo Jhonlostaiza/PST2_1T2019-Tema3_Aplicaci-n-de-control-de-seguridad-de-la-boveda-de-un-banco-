@@ -19,5 +19,4 @@ public class activity_editar extends AppCompatActivity {
         startActivity(i);
     }
 
-
 }
