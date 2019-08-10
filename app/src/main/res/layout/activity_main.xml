@@ -1,50 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/ingresar"
-        android:layout_width="113dp"
+        android:layout_width="340dp"
         android:layout_height="46dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/boton_redondo"
-        android:text="Ingreasar"
-        app:backgroundTint="#6DB2C5"
+        android:text="Ingresar"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/clave" />
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="314dp"
-        android:layout_height="48dp"
+        android:layout_width="341dp"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/icono_correo"
         android:ems="10"
+        android:hint="   Usuario"
         android:inputType="textPersonName"
-        android:text="   Usuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/clave"
-        android:layout_width="313dp"
-        android:layout_height="48dp"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="12dp"
         android:drawableLeft="@drawable/icono_clave"
         android:ems="10"
+        android:hint="   Contraseña"
         android:inputType="textPersonName"
-        android:text="   Contraseña"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
@@ -52,37 +54,36 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="20dp"
-        android:text="VERIFICACIÓN POR ROSTRO"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:text="*INGRESO CON VERIFICACIÓN DE ROSTRO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clave" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="152dp"
+        android:text="¿Es nuevo usuario?"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clave" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="167dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/boton_redondo"
-        android:text="Activar cámara"
-        app:backgroundTint="#6DB2C5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <Button
         android:id="@+id/registrar"
-        android:layout_width="113dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/boton_redondo"
+        android:layout_width="188dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/btn"
         android:onClick="Registrarse"
-        android:text="Registro"
-        app:backgroundTint="#6DB2C5"
+        android:text="Crear una cuenta"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#009688"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ingresar" />
 
@@ -90,22 +91,27 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="12dp"
-        android:text="Odin Security"
-        android:textSize="30sp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="204dp"
+        android:text="ODIN"
+        android:textColor="#B2000000"
+        android:textSize="45sp"
+        app:fontFamily="sans-serif-black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="176dp"
-        android:layout_height="188dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginLeft="116dp"
-        android:layout_marginTop="16dp"
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginLeft="164dp"
+        android:layout_marginTop="204dp"
+        android:text="Security"
+        android:textSize="45sp"
+        app:fontFamily="sans-serif-light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logotipo_odin" />
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
