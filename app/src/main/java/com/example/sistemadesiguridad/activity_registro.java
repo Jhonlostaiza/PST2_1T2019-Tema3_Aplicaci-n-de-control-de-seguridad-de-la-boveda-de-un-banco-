@@ -24,7 +24,8 @@ public class activity_registro extends AppCompatActivity {
         final EditText correoN = (EditText) findViewById(R.id.correo);
         final EditText DNIN = (EditText) findViewById(R.id.DNI);
         final EditText contraseñaN = (EditText) findViewById(R.id.contraseña);
-        final Button btnRegistro = (Button) findViewById(R.id.crear);
+        Button btnRegistro = (Button) findViewById(R.id.crear);
+
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,7 +42,9 @@ public class activity_registro extends AppCompatActivity {
                             if (ok == true) {
                                 Intent i = new Intent(activity_registro.this, MainActivity.class);
                                 activity_registro.this.startActivity(i);
-                             } else {
+                                activity_registro.this.finish();
+
+                            } else {
                                 AlertDialog.Builder alerta = new AlertDialog.Builder(activity_registro.this);
                                 alerta.setMessage("Fallo en el registro").setNegativeButton("Reintentar", null).create().show();
                             }

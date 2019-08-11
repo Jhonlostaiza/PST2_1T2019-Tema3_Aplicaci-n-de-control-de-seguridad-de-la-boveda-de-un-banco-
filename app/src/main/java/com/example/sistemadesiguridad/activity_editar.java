@@ -25,22 +25,25 @@ public class activity_editar extends AppCompatActivity {
 
         final EditText usuarioE = (EditText) findViewById(R.id.usuarioE);
         final EditText contrasenaE = (EditText) findViewById(R.id.contrasenaE);
-        final Button btnEditar = (Button) findViewById(R.id.editarbtn);
+        Button btnEditar = (Button) findViewById(R.id.editarbtn);
 
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usuario = usuarioE.getText().toString();
+                String nombre_usuario = usuarioE.getText().toString();
                 String contraseña = contrasenaE.getText().toString();
                 Response.Listener<String> respuesta = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonRespuesta = new JSONObject(response);
-                            boolean ok = jsonRespuesta.getBoolean("sucess");
+                            boolean ok = jsonRespuesta.getBoolean("ok");
                             if (ok == true) {
                                 Intent i = new Intent(activity_editar.this, activity_bobeda.class);
                                 activity_editar.this.startActivity(i);
+                                activity_editar.this.finish();
+
+
                             } else {
                                 AlertDialog.Builder alerta = new AlertDialog.Builder(activity_editar.this);
                                 alerta.setMessage("Fallo al editar datos").setNegativeButton("Reintentar", null).create().show();
@@ -51,7 +54,7 @@ public class activity_editar extends AppCompatActivity {
                     }
 
                 };
-                Actualizar a = new Actualizar(usuario, contraseña, respuesta);
+                Actualizar a = new Actualizar(nombre_usuario, contraseña, respuesta);
                 RequestQueue cola= Volley.newRequestQueue(activity_editar.this);
                 cola.add(a);
             }
