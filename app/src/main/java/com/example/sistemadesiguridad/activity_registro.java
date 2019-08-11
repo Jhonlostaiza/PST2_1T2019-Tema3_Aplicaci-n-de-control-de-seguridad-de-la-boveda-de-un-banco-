@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.JsonReader;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +20,7 @@ public class activity_registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        final EditText usuarioN = (EditText) findViewById(R.id.usuario);
+        final EditText usuarioN = (EditText) findViewById(R.id.usuarioE);
         final EditText correoN = (EditText) findViewById(R.id.correo);
         final EditText DNIN = (EditText) findViewById(R.id.DNI);
         final EditText contraseñaN = (EditText) findViewById(R.id.contraseña);
@@ -42,8 +41,7 @@ public class activity_registro extends AppCompatActivity {
                             if (ok == true) {
                                 Intent i = new Intent(activity_registro.this, MainActivity.class);
                                 activity_registro.this.startActivity(i);
-                                activity_registro.this.finish();
-                            } else {
+                             } else {
                                 AlertDialog.Builder alerta = new AlertDialog.Builder(activity_registro.this);
                                 alerta.setMessage("Fallo en el registro").setNegativeButton("Reintentar", null).create().show();
                             }

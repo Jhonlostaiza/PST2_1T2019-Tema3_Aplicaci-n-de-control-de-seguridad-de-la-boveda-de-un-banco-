@@ -9,7 +9,7 @@
     tools:context=".activity_editar">
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/contrasenaE"
         android:layout_width="341dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/usuarioE"
         android:layout_width="341dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/editarbtn"
         android:layout_width="341dp"
         android:layout_height="41dp"
         android:layout_marginStart="40dp"
@@ -108,7 +108,7 @@
         android:text="MODIFICAR"
         android:textColor="#009688"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText10" />
+        app:layout_constraintTop_toBottomOf="@+id/contrasenaE" />
 
     <Button
         android:id="@+id/button2"
@@ -122,7 +122,7 @@
         android:text="REGRESAR"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/editarbtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,7 +8,7 @@
     tools:context=".activity_registro">
 
     <EditText
-        android:id="@+id/usuario"
+        android:id="@+id/usuarioE"
         android:layout_width="341dp"
         android:layout_height="50dp"
         android:layout_marginStart="35dp"
@@ -32,7 +32,7 @@
         android:hint="   ejemplo@correo.com"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/usuarioE" />
 
     <EditText
         android:id="@+id/contraseña"
