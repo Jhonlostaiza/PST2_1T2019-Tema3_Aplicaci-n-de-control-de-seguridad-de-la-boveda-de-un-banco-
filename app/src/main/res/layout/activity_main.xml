@@ -11,16 +11,16 @@
         android:id="@+id/ingresar"
         android:layout_width="340dp"
         android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/boton_redondo"
         android:text="Ingresar"
         android:textColor="#009688"
         android:textSize="18sp"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clave" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/username"
@@ -54,38 +54,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="64dp"
         android:text="*INGRESO CON VERIFICACIÓN DE ROSTRO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clave" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="152dp"
-        android:text="¿Es nuevo usuario?"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clave" />
-
-    <Button
-        android:id="@+id/registrar"
-        android:layout_width="188dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="92dp"
-        android:background="@drawable/btn"
-        android:onClick="Registrarse"
-        android:text="Crear una cuenta"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="#009688"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingresar" />
 
     <TextView
         android:id="@+id/textView4"

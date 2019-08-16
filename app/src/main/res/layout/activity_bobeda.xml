@@ -97,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cod_usuario" />
 
     <Button
-        android:id="@+id/btn_cerrar_sesion"
+        android:id="@+id/registrar_bobedas"
         android:layout_width="338dp"
         android:layout_height="38dp"
         android:layout_marginStart="40dp"

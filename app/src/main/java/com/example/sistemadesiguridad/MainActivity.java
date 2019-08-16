@@ -36,12 +36,26 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonRespuesta = new JSONObject(response);
                             boolean ok = jsonRespuesta.getBoolean("sucess");
+                            String tipo=jsonRespuesta.getString("tipo");
+
                             if (ok == true) {
-                                String nombre = jsonRespuesta.getString("nombre_usuario");
-                                Intent bobeda = new Intent(MainActivity.this, activity_bobeda.class);
-                                //bobeda.putExtra("usuario",nombre);
-                                MainActivity.this.startActivity(bobeda);
-                                MainActivity.this.finish();
+                                if(tipo.compareTo("gerente")==0) {
+                                    String nombre = jsonRespuesta.getString("nombre_usuario");
+                                    Intent bobeda = new Intent(MainActivity.this, activity_bobeda.class);
+                                    //bobeda.putExtra("usuario",nombre);
+                                    MainActivity.this.startActivity(bobeda);
+                                    MainActivity.this.finish();
+                                }if(tipo.compareTo("administrador")==0){
+                                    String nombre = jsonRespuesta.getString("nombre_usuario");
+                                    Intent administrador = new Intent(MainActivity.this, administrador.class);
+                                    //bobeda.putExtra("usuario",nombre);
+                                    MainActivity.this.startActivity(administrador);
+                                    MainActivity.this.finish();
+                                }
+                                AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);
+                                alerta.setMessage(tipo).setNegativeButton("Reintentar", null).create().show();
+
+
                             } else {
                                 AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);
                                 alerta.setMessage("Fallo en el login").setNegativeButton("Reintentar", null).create().show();
