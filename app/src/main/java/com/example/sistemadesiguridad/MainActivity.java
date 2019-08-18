@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
                                         bobeda.putExtra("nombre_usuario",nombre);
                                         bobeda.putExtra("cedula",jsonRespuesta.getString("cedula"));
+                                        bobeda.putExtra("id_bobeda",jsonRespuesta.getInt("id_bobeda"));
+                                        bobeda.putExtra("estado",jsonRespuesta.getInt("estado"));
                                         MainActivity.this.startActivity(bobeda);//Se inicia el layout bobeda y se cierra el layout actual
                                         MainActivity.this.finish();
                                     }

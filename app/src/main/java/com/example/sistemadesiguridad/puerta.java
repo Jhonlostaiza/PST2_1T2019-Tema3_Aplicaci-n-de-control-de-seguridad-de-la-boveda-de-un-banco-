@@ -11,10 +11,11 @@ public class puerta extends StringRequest {
     private static final String ruta="https://odinpst.000webhostapp.com/puerta.php";
     private Map<String, String> parametros;
 
-    public puerta (boolean estado, Response.Listener<String> listener) {
+    public puerta (int estado, int id_boveda, Response.Listener<String> listener) {
         super(Request.Method.POST, ruta,listener,null);
         parametros = new HashMap<>();
         parametros.put("estado", estado+"");
+        parametros.put("id_boveda", id_boveda+"");
     }
     @Override
     protected Map<String, String> getParams(){
