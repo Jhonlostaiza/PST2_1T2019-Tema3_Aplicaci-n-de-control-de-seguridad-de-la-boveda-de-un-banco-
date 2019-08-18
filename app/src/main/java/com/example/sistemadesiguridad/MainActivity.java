@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 //closekeyboard();
                 if (usuario.isEmpty() || clave.isEmpty()) { //Validacion (que tdos los datos hayan sido ingresados)
                     Toast.makeText(this, "Datos incompletos", Toast.LENGTH_SHORT).show();
+                    pb.setVisibility(View.INVISIBLE);
 
                 } else {//si estan completos ingresamos a la consulta a la base de datos
                     Response.Listener<String> respuesta = new Response.Listener<String>() {
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                                 } else {
                                     AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);//si el respuesta sucess de la base es false no existe el usuario en la base de datos y se envia el mensaje de alerta
                                     alerta.setMessage("Usuario o contraseña incorrectos").setNegativeButton("Reintentar", null).create().show();
+                                    pb.setVisibility(View.INVISIBLE);
                                 }
                             } catch (JSONException e) {
                                 e.getMessage();
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     cola.add(r);
                 }
 
-                pb.setVisibility(View.INVISIBLE);
+
             }
 
 
