@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(this, "realizando", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(this, usuario, Toast.LENGTH_SHORT);
                 //closekeyboard();
-                if (usuario.isEmpty() || clave.isEmpty()) { //Validacion (Todos los datos ingresados
+                if (usuario.isEmpty() || clave.isEmpty()) { //Validacion (que tdos los datos hayan sido ingresados)
                     Toast.makeText(this, "Datos incompletos", Toast.LENGTH_SHORT).show();
 
                 } else {//si estan completos ingresamos a la consulta a la base de datos
@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
                                         String nombre = jsonRespuesta.getString("nombre_usuario");
                                         Intent bobeda = new Intent(MainActivity.this, activity_bobeda.class);
                                         //bobeda.putExtra("usuario",nombre);
+
+                                        bobeda.putExtra("nombre_usuario",nombre);
+                                        bobeda.putExtra("cedula",jsonRespuesta.getString("cedula"));
                                         MainActivity.this.startActivity(bobeda);//Se inicia el layout bobeda y se cierra el layout actual
                                         MainActivity.this.finish();
                                     }
@@ -63,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                                         String nombre = jsonRespuesta.getString("nombre_usuario");
                                         Intent administrador = new Intent(MainActivity.this, administrador.class);
                                         //bobeda.putExtra("usuario",nombre);
+                                        administrador.putExtra("nombre_usuario",nombre);
+                                        administrador.putExtra("cedula",jsonRespuesta.getString("cedula"));
                                         MainActivity.this.startActivity(administrador);
                                         MainActivity.this.finish();
                                     }
@@ -70,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 } else {
                                     AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);//si el respuesta sucess de la base es false no existe el usuario en la base de datos y se envia el mensaje de alerta
-                                    alerta.setMessage("Fallo en el login").setNegativeButton("Reintentar", null).create().show();
+                                    alerta.setMessage("Usuario o contraseña incorrectos").setNegativeButton("Reintentar", null).create().show();
                                 }
                             } catch (JSONException e) {
                                 e.getMessage();

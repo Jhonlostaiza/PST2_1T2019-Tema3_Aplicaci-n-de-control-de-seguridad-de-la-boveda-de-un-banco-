@@ -10,13 +10,13 @@
     <TextView
         android:id="@+id/nombre_usuario"
         android:layout_width="136dp"
-        android:layout_height="43dp"
+        android:layout_height="30dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
         android:text="Usuario"
         android:textColor="@android:color/background_dark"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:fontFamily="sans-serif-black"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,11 +27,11 @@
         android:id="@+id/cod_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
-        android:layout_marginRight="88dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:text="Código de usuario"
         android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nombre_usuario" />
 
@@ -82,15 +82,16 @@
 
     <Button
         android:id="@+id/btn_editar"
-        android:layout_width="149dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
         android:background="@drawable/boton_redondo"
         android:onClick="Editar"
         android:text="Editar"
         android:textColor="@android:color/background_light"
+        android:textSize="12sp"
         app:backgroundTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cod_usuario" />
@@ -199,6 +200,6 @@
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars[10]" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
