@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         public void ingreso(View view) { //evento al presionar ingresar
-                final String usuario = usuarioN.getText().toString();
+                final String usuario = usuarioN.getText().toString();//Almancenamos los datos ingresados , tanto el username y su clave
                 final String clave = claveN.getText().toString();
                 //Toast.makeText(this, "realizando", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(this, usuario, Toast.LENGTH_SHORT);
@@ -42,36 +42,34 @@ public class MainActivity extends AppCompatActivity {
                 if (usuario.isEmpty() || clave.isEmpty()) { //Validacion (Todos los datos ingresados
                     Toast.makeText(this, "Datos incompletos", Toast.LENGTH_SHORT).show();
 
-                } else {
+                } else {//si estan completos ingresamos a la consulta a la base de datos
                     Response.Listener<String> respuesta = new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
                                 JSONObject jsonRespuesta = new JSONObject(response);
                                 boolean ok = jsonRespuesta.getBoolean("sucess");
-                                String tipo = jsonRespuesta.getString("tipo");
 
                                 if (ok == true) {
-                                    if (tipo.compareTo("gerente") == 0) {
+                                    String tipo = jsonRespuesta.getString("tipo");//Se pregunta por el tipo de usuario que la base de datos retorna
+                                    if (tipo.compareTo("gerente") == 0) {//Si es gerente se envia al Layout de bobeda y se enria el nombre del usuario
                                         String nombre = jsonRespuesta.getString("nombre_usuario");
                                         Intent bobeda = new Intent(MainActivity.this, activity_bobeda.class);
                                         //bobeda.putExtra("usuario",nombre);
-                                        MainActivity.this.startActivity(bobeda);
+                                        MainActivity.this.startActivity(bobeda);//Se inicia el layout bobeda y se cierra el layout actual
                                         MainActivity.this.finish();
                                     }
-                                    if (tipo.compareTo("administrador") == 0) {
+                                    if (tipo.compareTo("administrador") == 0) {//Se realiza lo mismo que el caso anterio solo que este se renvia al layout administrador
                                         String nombre = jsonRespuesta.getString("nombre_usuario");
                                         Intent administrador = new Intent(MainActivity.this, administrador.class);
                                         //bobeda.putExtra("usuario",nombre);
                                         MainActivity.this.startActivity(administrador);
                                         MainActivity.this.finish();
                                     }
-                                    AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);
-                                    alerta.setMessage(tipo).setNegativeButton("Reintentar", null).create().show();
 
 
                                 } else {
-                                    AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);
+                                    AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);//si el respuesta sucess de la base es false no existe el usuario en la base de datos y se envia el mensaje de alerta
                                     alerta.setMessage("Fallo en el login").setNegativeButton("Reintentar", null).create().show();
                                 }
                             } catch (JSONException e) {
