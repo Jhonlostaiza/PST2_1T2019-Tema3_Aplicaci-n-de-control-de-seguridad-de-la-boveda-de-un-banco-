@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -21,6 +22,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private EditText usuarioN,claveN;
+    private ProgressBar pb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
         Button ingresar = (Button) findViewById(R.id.ingresar);
         usuarioN = (EditText) findViewById(R.id.username);
         claveN = (EditText) findViewById(R.id.clave);
+        pb = (ProgressBar)findViewById(R.id.progressBar2);
+
     }
 
 
         public void ingreso(View view) { //evento al presionar ingresar
+                pb.setVisibility(View.VISIBLE); //hacemos visible el progressbar
                 final String usuario = usuarioN.getText().toString();//Almancenamos los datos ingresados , tanto el username y su clave
                 final String clave = claveN.getText().toString();
                 //Toast.makeText(this, "realizando", Toast.LENGTH_SHORT).show();
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                                 boolean ok = jsonRespuesta.getBoolean("sucess");
 
                                 if (ok == true) {
+
                                     String tipo = jsonRespuesta.getString("tipo");//Se pregunta por el tipo de usuario que la base de datos retorna
                                     if (tipo.compareTo("gerente") == 0) {//Si es gerente se envia al Layout de bobeda y se enria el nombre del usuario
                                         String nombre = jsonRespuesta.getString("nombre_usuario");
@@ -59,8 +65,11 @@ public class MainActivity extends AppCompatActivity {
 
                                         bobeda.putExtra("nombre_usuario",nombre);
                                         bobeda.putExtra("cedula",jsonRespuesta.getString("cedula"));
-                                        bobeda.putExtra("id_bobeda",jsonRespuesta.getInt("id_bobeda"));
-                                        bobeda.putExtra("estado",jsonRespuesta.getInt("estado"));
+                                        bobeda.putExtra("id_bobeda",jsonRespuesta.getString("id_bobeda"));
+                                        bobeda.putExtra("estado",jsonRespuesta.getString("estado"));
+
+                                        //bobeda.putExtra("id_bobeda",jsonRespuesta.getInt("id_bobeda"));
+                                        //bobeda.putExtra("estado",jsonRespuesta.getInt("estado"));
                                         MainActivity.this.startActivity(bobeda);//Se inicia el layout bobeda y se cierra el layout actual
                                         MainActivity.this.finish();
                                     }
@@ -88,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
                     RequestQueue cola = Volley.newRequestQueue(MainActivity.this);
                     cola.add(r);
                 }
+
+                pb.setVisibility(View.INVISIBLE);
             }
 
 
