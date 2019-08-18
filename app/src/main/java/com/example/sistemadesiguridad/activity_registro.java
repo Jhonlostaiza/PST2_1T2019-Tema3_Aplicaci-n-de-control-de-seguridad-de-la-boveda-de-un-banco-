@@ -38,23 +38,27 @@ public class activity_registro extends AppCompatActivity {
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Obtenemos los datos a enviar para el registro del usuario en la base de datos
                 String usuario = usuarioN.getText().toString();
                 String correo = correoN.getText().toString();
                 int DNI = Integer.parseInt(DNIN.getText().toString());
                 String contraseña = contraseñaN.getText().toString();
                 String tipo = opciones.getSelectedItem().toString();
+                //Realizamos la consulta a la base de datos y recivimos el objeto json de respuesta
                 Response.Listener<String> respuesta = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonRespuesta = new JSONObject(response);
                             boolean ok = jsonRespuesta.getBoolean("sucess");
+                            //Si la respuesta es correcta nos redirigimos al layout administrador
                             if (ok == true) {
-                                Intent i = new Intent(activity_registro.this, MainActivity.class);
+                                Intent i = new Intent(activity_registro.this, administrador.class);
                                 activity_registro.this.startActivity(i);
                                 activity_registro.this.finish();
 
-                            } else {
+                            }//Si esto no ocurre se envia el mensaje de alerta de fallo de registro
+                            else {
                                 AlertDialog.Builder alerta = new AlertDialog.Builder(activity_registro.this);
                                 alerta.setMessage("Fallo en el registro").setNegativeButton("Reintentar", null).create().show();
                             }
