@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Usuarios"></activity>
+        <activity android:name=".Usuarios" />
         <activity android:name=".RegistrarBobeda" />
         <activity android:name=".administrador" />
         <activity android:name=".activity_editar" />

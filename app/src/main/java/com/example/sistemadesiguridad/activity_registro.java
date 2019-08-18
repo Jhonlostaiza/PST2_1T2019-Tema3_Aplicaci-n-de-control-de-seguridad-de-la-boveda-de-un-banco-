@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -16,6 +18,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 public class activity_registro extends AppCompatActivity {
 
+    Spinner opciones;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +27,13 @@ public class activity_registro extends AppCompatActivity {
         final EditText usuarioN = (EditText) findViewById(R.id.usuarioE);
         final EditText correoN = (EditText) findViewById(R.id.correo);
         final EditText DNIN = (EditText) findViewById(R.id.DNI);
-        final EditText contraseñaN = (EditText) findViewById(R.id.contraseña);
+        final EditText contraseñaN = (EditText) findViewById(R.id.txtcontraseña);
         Button btnRegistro = (Button) findViewById(R.id.crear);
+
+        opciones =(Spinner)findViewById(R.id.spinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.opciones, android.R.layout.simple_spinner_item);
+        opciones.setAdapter(adapter);
 
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +42,7 @@ public class activity_registro extends AppCompatActivity {
                 String correo = correoN.getText().toString();
                 int DNI = Integer.parseInt(DNIN.getText().toString());
                 String contraseña = contraseñaN.getText().toString();
+                String tipo = opciones.getSelectedItem().toString();
                 Response.Listener<String> respuesta = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -54,7 +64,7 @@ public class activity_registro extends AppCompatActivity {
                     }
 
                 };
-                Registro r = new Registro(usuario, correo, DNI, contraseña, respuesta);
+                Registro r = new Registro(usuario, correo, DNI, contraseña,tipo, respuesta);
                 RequestQueue cola= Volley.newRequestQueue(activity_registro.this);
                 cola.add(r);
             }

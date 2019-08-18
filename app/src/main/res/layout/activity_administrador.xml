@@ -15,7 +15,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/boton_redondo"
-        android:onClick="CerraSesion"
+        android:onClick="ConsultarUser"
         android:text="Usuarios"
         android:textColor="#FFFFFF"
         app:backgroundTint="#009688"
