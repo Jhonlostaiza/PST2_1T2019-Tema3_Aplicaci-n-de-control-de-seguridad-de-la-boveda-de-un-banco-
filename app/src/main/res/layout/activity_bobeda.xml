@@ -30,7 +30,7 @@
 
     <TextView
 
-        android:id="@+id/cod_usuario"
+        android:id="@+id/txcorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -104,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cod_usuario" />
 
     <Button
-        android:id="@+id/registrar_bobedas"
+        android:id="@+id/eliminar_bobedas"
         android:layout_width="316dp"
         android:layout_height="30dp"
         android:layout_marginStart="24dp"

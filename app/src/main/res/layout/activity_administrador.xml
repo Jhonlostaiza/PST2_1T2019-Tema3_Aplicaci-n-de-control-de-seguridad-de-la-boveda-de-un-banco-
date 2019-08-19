@@ -12,65 +12,66 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-    <Button
-        android:id="@+id/usuarios"
-        android:layout_width="316dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/boton_redondo"
-        android:onClick="ConsultarUser"
-        android:text="Usuarios"
-        android:textColor="@color/colorPrimaryDark"
-        app:backgroundTint="@color/gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrar_bobedas" />
 
-    <Button
-        android:id="@+id/bobedas"
-        android:layout_width="316dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/boton_redondo"
-        android:onClick="CerraSesion"
-        android:text="Bobedas"
-        android:textColor="@color/colorPrimaryDark"
-        app:backgroundTint="@color/gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuarios" />
+            <Button
+                android:id="@+id/usuarios"
+                android:layout_width="316dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/boton_redondo"
+                android:onClick="ConsultarUser"
+                android:text="Usuarios"
+                android:textColor="@color/colorPrimaryDark"
+                app:backgroundTint="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registrar_bobedas" />
 
-    <Button
-        android:id="@+id/registrar_usuarios"
-        android:layout_width="316dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="92dp"
-        android:background="@drawable/boton_redondo"
-        android:onClick="Registar_usuario"
-        android:text="Registrar Usuarios"
-        android:textColor="@color/colorPrimaryDark"
-        app:backgroundTint="@color/gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            <Button
+                android:id="@+id/bobedas"
+                android:layout_width="316dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/boton_redondo"
+                android:onClick="CerraSesion"
+                android:text="Bobedas"
+                android:textColor="@color/colorPrimaryDark"
+                app:backgroundTint="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usuarios" />
 
-    <Button
-        android:id="@+id/btn_cerrar_sesion2"
-        android:layout_width="316dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginBottom="136dp"
-        android:background="@drawable/boton_redondo"
-        android:onClick="CerraSesion"
-        android:text="CERRAR SESION"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/registrar_usuarios"
+                android:layout_width="316dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="72dp"
+                android:background="@drawable/boton_redondo"
+                android:onClick="Registar_usuario"
+                android:text="Registrar Usuarios"
+                android:textColor="@color/colorPrimaryDark"
+                app:backgroundTint="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <Button
+                android:id="@+id/btn_cerrar_sesion2"
+                android:layout_width="316dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/boton_redondo"
+                android:onClick="CerraSesion"
+                android:text="CERRAR SESION"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/nombre_usuario"
@@ -115,20 +116,20 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/cod_usuario" />
 
-    <Button
-        android:id="@+id/registrar_bobedas"
-        android:layout_width="316dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/boton_redondo"
-        android:onClick="CerraSesion"
-        android:text="Registrar Bobedas"
-        android:textColor="@color/colorPrimaryDark"
-        app:backgroundTint="@color/gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrar_usuarios" />
+            <Button
+                android:id="@+id/registrar_bobedas"
+                android:layout_width="316dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/boton_redondo"
+                android:onClick="CerraSesion"
+                android:text="Registrar Bobedas"
+                android:textColor="@color/colorPrimaryDark"
+                app:backgroundTint="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/registrar_usuarios" />
 
     <View
         android:id="@+id/divider"

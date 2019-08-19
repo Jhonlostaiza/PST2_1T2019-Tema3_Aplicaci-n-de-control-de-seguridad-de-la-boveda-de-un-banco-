@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:windowSoftInputMode="stateHidden|adjustResize">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".VisorUsuario"></activity>
+        <activity android:name=".AdministradorBobeda" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".Usuarios" />
         <activity android:name=".RegistrarBobeda" />
         <activity android:name=".administrador" />

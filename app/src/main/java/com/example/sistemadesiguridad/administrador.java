@@ -23,6 +23,11 @@ public class administrador extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void ConsultarBobeda(View view) {
+        Intent i = new Intent(this, AdministradorBobeda.class );
+        startActivity(i);
+    }
+
     public void CerraSesion(View view) {
         Intent i = new Intent(this, MainActivity.class );
         startActivity(i);

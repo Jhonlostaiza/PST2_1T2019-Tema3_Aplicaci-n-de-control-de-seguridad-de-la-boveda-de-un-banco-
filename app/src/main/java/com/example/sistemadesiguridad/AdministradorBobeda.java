@@ -2,11 +2,8 @@ package com.example.sistemadesiguridad;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -18,8 +15,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.sistemadesiguridad.Entidades.user_datos;
-import com.example.sistemadesiguridad.adaptadores.user_adaptador;
+import com.example.sistemadesiguridad.Entidades.bobeda_datos;
+import com.example.sistemadesiguridad.adaptadores.bobeda_adaptador;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,38 +24,19 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class Usuarios extends AppCompatActivity {
+public class AdministradorBobeda extends AppCompatActivity {
 
-    private String URLstring = "https://odinpst.000webhostapp.com/consultar.php";
+    private String URLstring = "https://odinpst.000webhostapp.com/bobeda.php";
     private static ProgressDialog mProgressDialog;
     private ListView listView;
-    ArrayList<user_datos> userdatosArrayList;
-    private user_adaptador userAdaptador;
+    ArrayList<bobeda_datos> bobedaArrayList;
+    private bobeda_adaptador BobedaAdaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usuarios);
-
-        listView = findViewById(R.id.lvusuario);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent visorDetalles = new Intent(view.getContext(), VisorUsuario.class);
-                //agregamos los parametros extras, titulo, descpricion, imagen
-                //obtenemos la posicion de esos datos por medio de "position"
-
-                user_datos datos = new user_datos();
-
-                visorDetalles.putExtra("CEDULA", userdatosArrayList.get(position).getCedula());
-                visorDetalles.putExtra("TIPO", userdatosArrayList.get(position).getTipo());
-                visorDetalles.putExtra("CORREO", userdatosArrayList.get(position).getCorreo());
-                visorDetalles.putExtra("CONTRA", userdatosArrayList.get(position).getContraseña());
-                visorDetalles.putExtra("USER", userdatosArrayList.get(position).getNombre_usuario());
-                //visorDetalles.putExtra("IMG", datosImg[position]);
-                startActivity(visorDetalles);
-            }
-        });
+        setContentView(R.layout.activity_administrador_bobeda);
+        listView = findViewById(R.id.lvbobeda);
 
         retrieveJSON();
 
@@ -80,24 +58,22 @@ public class Usuarios extends AppCompatActivity {
                             JSONObject obj = new JSONObject(response);
                             if(obj.optString("success").equals("1")){
 
-                               userdatosArrayList = new ArrayList<>();
+                                bobedaArrayList = new ArrayList<>();
                                 JSONArray dataArray  = obj.getJSONArray("datos");
 
 
                                 for (int i = 0; i < dataArray.length(); i++) {
 
-                                    user_datos datos = new user_datos();
+                                    bobeda_datos datos = new bobeda_datos();
                                     JSONObject dataobj = dataArray.getJSONObject(i);
 
 
-                                    datos.setCedula(dataobj.getString("cedula"));
-                                    datos.setCorreo(dataobj.getString("correo"));
-                                    datos.setNombre_usuario(dataobj.getString("nombre_usuario"));
-                                    datos.setTipo(dataobj.getString("tipo"));
-                                    datos.setContraseña(dataobj.getString("contraseña"));
+                                    datos.setId(Integer.parseInt(dataobj.getString("id_bobeda")));
+                                    datos.setNombre(dataobj.getString("nombre_bobeda"));
+                                    datos.setEstado(Integer.parseInt(dataobj.getString("estado")));
                                     //datos.setImgURL(dataobj.getString("imgURL"));
 
-                                    userdatosArrayList.add(datos);
+                                    bobedaArrayList.add(datos);
 
                                 }
 
@@ -113,12 +89,12 @@ public class Usuarios extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        //muestra el error si ocurre
+                        //presenta el error si ocurre
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
-        // request queue
+        // respuesta queue
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         requestQueue.add(stringRequest);
@@ -127,9 +103,9 @@ public class Usuarios extends AppCompatActivity {
     }
 
     private void setupListview(){
-        removeSimpleProgressDialog();  //elimina el dialogo de proceso
-        userAdaptador = new user_adaptador(this, userdatosArrayList);
-        listView.setAdapter(userAdaptador);
+        removeSimpleProgressDialog();  //will remove progress dialog
+        BobedaAdaptador = new bobeda_adaptador(this, bobedaArrayList);
+        listView.setAdapter(BobedaAdaptador);
     }
 
     public static void removeSimpleProgressDialog() {
