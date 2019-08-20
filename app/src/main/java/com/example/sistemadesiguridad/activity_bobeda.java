@@ -64,6 +64,10 @@ public class activity_bobeda extends AppCompatActivity {
         Intent i = new Intent(this, activity_editar.class );
         i.putExtra("nombre_usuario",usuario);
         i.putExtra("clave",contraseña);
+        i.putExtra("cedula",cedula);
+        i.putExtra("id_bobeda",id_bobeda);
+        i.putExtra("estado",estado);
+
         startActivity(i);
     }
 
