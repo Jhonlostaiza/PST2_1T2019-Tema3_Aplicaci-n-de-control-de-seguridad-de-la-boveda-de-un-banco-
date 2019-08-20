@@ -81,8 +81,10 @@ public class MainActivity extends AppCompatActivity {
                                         //bobeda.putExtra("usuario",nombre);
                                         administrador.putExtra("nombre_usuario",nombre);
                                         administrador.putExtra("cedula",jsonRespuesta.getString("cedula"));
+                                        administrador.putExtra("contraseña",clave);
                                         MainActivity.this.startActivity(administrador);
                                         MainActivity.this.finish();
+
                                     }
 
 

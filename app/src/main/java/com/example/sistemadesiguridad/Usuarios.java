@@ -43,7 +43,7 @@ public class Usuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuarios);
 
-        Button volver = (Button) findViewById(R.id.btnvolver);
+        //Button volver = (Button) findViewById(R.id.btnvolver);
         listView = findViewById(R.id.lvusuarios);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

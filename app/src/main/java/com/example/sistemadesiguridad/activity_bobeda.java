@@ -67,6 +67,7 @@ public class activity_bobeda extends AppCompatActivity {
         i.putExtra("cedula",cedula);
         i.putExtra("id_bobeda",id_bobeda);
         i.putExtra("estado",estado);
+        i.putExtra("tipo","gerente");
 
         startActivity(i);
     }

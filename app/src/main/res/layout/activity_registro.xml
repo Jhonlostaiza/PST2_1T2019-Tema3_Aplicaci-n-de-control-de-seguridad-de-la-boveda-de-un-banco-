@@ -44,59 +44,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usuarioE" />
 
-    <EditText
-        android:id="@+id/txtcontraseña"
-        android:layout_width="316dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/gray"
-        android:drawableLeft="@drawable/icono_clave"
-        android:ems="10"
-        android:hint=" Contraseña"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/DNI" />
+            <EditText
+                android:id="@+id/txtcontraseña"
+                android:layout_width="316dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray"
+                android:drawableLeft="@drawable/icono_clave"
+                android:ems="10"
+                android:hint=" Contraseña"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/DNI" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="104dp"
-        android:text="Reconocimiento Facial"
-        app:backgroundTint="#6DB2C5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcontraseña" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="316dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_redondo_blanco"
-        android:text="Añadir"
-        android:textColor="#009688"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <Button
-        android:id="@+id/crear"
-        android:layout_width="316dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/boton_redondo"
-        android:text="CREAR CUENTA"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+            <Button
+                android:id="@+id/crear"
+                android:layout_width="316dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/boton_redondo"
+                android:text="CREAR CUENTA"
+                android:textColor="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bobedas" />
 
     <EditText
         android:id="@+id/DNI"
@@ -141,22 +116,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="24dp"
-        android:background="#B09BFFA0"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent" />
+            <Spinner
+                android:id="@+id/bobedas"
+                android:layout_width="155dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="44dp"
+                android:background="#B09BFFA0"
+                android:visibility="invisible"
+                app:layout_constraintStart_toEndOf="@+id/spinner2"
+                app:layout_constraintTop_toBottomOf="@+id/txtcontraseña" />
 
-    <TextView
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="155dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="44dp"
+                android:background="#B09BFFA0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtcontraseña" />
+
+            <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
@@ -166,7 +149,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Tipo de usuario:"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintBottom_toTopOf="@+id/bobedas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"

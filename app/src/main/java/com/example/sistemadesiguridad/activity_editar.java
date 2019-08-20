@@ -20,7 +20,7 @@ import org.json.JSONObject;
 
 public class activity_editar extends AppCompatActivity {
     private EditText usuarioE,contrasenaE;
-    private String usuarioPrev,contraseñaPrev,cedula,id_bobeda,estado;
+    private String usuarioPrev,contraseñaPrev,cedula,id_bobeda,estado,tipo;
     private Button btnEditar;
     private ProgressBar pbr;
     @Override
@@ -28,12 +28,17 @@ public class activity_editar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar);
 
-        Bundle bundle = getIntent().getExtras(); //obtener información sin editar
+        Bundle bundle = getIntent().getExtras(); //obtener información previa
         usuarioPrev =bundle.getString("nombre_usuario"); //datos previos
         contraseñaPrev=bundle.getString("contraseña"); //datos previos
         cedula = bundle.getString("cedula");
-        id_bobeda = bundle.getString("id_bobeda");
-        estado = bundle.getString("estado");
+        tipo = bundle.getString("tipo");
+        if (tipo.compareTo("gerente")==0){ //para gerente llegan más datos
+            id_bobeda = bundle.getString("id_bobeda");
+            estado = bundle.getString("estado");
+        }
+
+
         usuarioE = (EditText) findViewById(R.id.usuarioE);
         contrasenaE = (EditText) findViewById(R.id.contrasenaE);
         btnEditar = (Button) findViewById(R.id.editarbtn);
@@ -70,16 +75,19 @@ public class activity_editar extends AppCompatActivity {
                         boolean ok = jsonRespuesta.getBoolean("ok");
                         if (ok == true) {
                             Intent i = new Intent(activity_editar.this, activity_bobeda.class);
+
+                            //enviamos los datos necesarios para que inicie la sgte actividad
                             i.putExtra("nombre_usuario",usuarioIntent);
                             i.putExtra("cedula",cedula);
-                            i.putExtra("id_bobeda", id_bobeda);
-                            i.putExtra("estado",estado);
                             i.putExtra("contraseña",contraseñaIntent);
+                            if(tipo.compareTo("gerente")==0){ //Si es gerente enviamos los datos adicionales
+                                i.putExtra("id_bobeda", id_bobeda);
+                                i.putExtra("estado",estado);
 
-                            activity_editar.this.startActivity(i);//Se inicia el layout bobeda y se cierra el layout actual
-                            activity_editar.this.finish();
-                            Toast.makeText(getApplicationContext(),"AAAAAAA",Toast.LENGTH_SHORT).show();
-
+                                activity_editar.this.startActivity(i);//Se inicia el layout bobeda y se cierra el layout actual
+                                activity_editar.this.finish();
+                                Toast.makeText(getApplicationContext(),"AAAAAAAAAAAAAAA",Toast.LENGTH_SHORT).show();
+                            }
 
                         } else {
                             AlertDialog.Builder alerta = new AlertDialog.Builder(activity_editar.this);
