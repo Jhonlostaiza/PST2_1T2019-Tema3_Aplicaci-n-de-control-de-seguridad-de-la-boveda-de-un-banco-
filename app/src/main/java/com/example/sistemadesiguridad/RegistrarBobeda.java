@@ -35,7 +35,7 @@ public class RegistrarBobeda extends AppCompatActivity {
     }
 
 
-    public void crearBobeda (View v){
+    public void crearBobeda (View view){
         String nombre = nombreE.getText().toString();
         String estado = estadoE.getText().toString();
 
@@ -87,7 +87,7 @@ public class RegistrarBobeda extends AppCompatActivity {
             };
 
 
-                RegistroBobeda r = new RegistroBobeda(nombre, estadoInt, respuesta);
+                RegistroBobeda r = new RegistroBobeda(nombre, estado, respuesta);
                 RequestQueue cola = Volley.newRequestQueue(RegistrarBobeda.this);
                 cola.add(r);
 

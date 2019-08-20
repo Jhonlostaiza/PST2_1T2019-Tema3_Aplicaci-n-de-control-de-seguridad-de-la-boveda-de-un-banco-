@@ -9,10 +9,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegistroBobeda extends StringRequest {
-    private static final String ruta="https://odinpst.000webhostapp.com/RegistroBobeda.php";
+    private static final String ruta="https://odinpst.000webhostapp.com/registrobobeda.php";
     private Map<String, String> parametros;
 
-    public RegistroBobeda(String nombre, int estado,  Response.Listener<String> listener) {
+    public RegistroBobeda(String nombre, String estado,  Response.Listener<String> listener) {
         super(Method.POST, ruta,listener,null);
         parametros = new HashMap<>();
         parametros.put("nombre_bobeda", nombre+"");
