@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,12 +36,15 @@ public class Usuarios extends AppCompatActivity {
     ArrayList<user_datos> userdatosArrayList;
     private user_adaptador userAdaptador;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuarios);
 
-        listView = findViewById(R.id.lvusuario);
+        Button volver = (Button) findViewById(R.id.btnvolver);
+        listView = findViewById(R.id.lvusuarios);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -170,6 +174,11 @@ public class Usuarios extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void volver(View view) {
+        Intent i = new Intent(this, administrador.class);
+        startActivity(i);
     }
 
 }

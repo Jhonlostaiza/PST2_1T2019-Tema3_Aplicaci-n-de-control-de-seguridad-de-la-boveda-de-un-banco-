@@ -25,20 +25,19 @@
         android:id="@+id/imguser"
         android:layout_width="108dp"
         android:layout_height="114dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginLeft="164dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_usuario"
+        tools:layout_editor_absoluteY="76dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/eliminar_bobedas"
         android:layout_width="316dp"
         android:layout_height="39dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/boton_redondo"
         android:text="ELIMINAR USUARIO"
         android:textColor="@color/colorPrimaryDark"
@@ -55,10 +54,10 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eliminar_bobedas"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <View
         android:id="@+id/divider3"
@@ -73,18 +72,18 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.349" />
 
     <Button
         android:id="@+id/editar_usuarios"
         android:layout_width="316dp"
         android:layout_height="38dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/boton_redondo"
         android:text="EDITAR USUARIO"
         android:textColor="@color/colorPrimaryDark"
@@ -92,28 +91,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
-    <TextView
-        android:id="@+id/nombre_usuario"
-        android:layout_width="136dp"
-        android:layout_height="43dp"
-
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
-        android:text="Usuario"
-        android:textColor="@android:color/background_dark"
-        android:textSize="30sp"
-        app:fontFamily="sans-serif-black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
-        android:layout_width="414dp"
-        android:layout_height="161dp"
+        android:layout_width="420dp"
+        android:layout_height="249dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
@@ -129,7 +109,7 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
-            android:layout_height="141dp"
+            android:layout_height="247dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="2dp"
@@ -139,13 +119,26 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:text="Usuario"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp" />
+
+            <TextView
 
                 android:id="@+id/cedula"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 android:layout_marginRight="40dp"
                 android:text="Cedula:"
@@ -159,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="44dp"
                 android:layout_marginRight="44dp"
                 android:text="Correo:"
@@ -173,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="44dp"
                 android:text="Contraseña:"
@@ -187,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="64dp"
                 android:layout_marginRight="64dp"
                 android:text="Tipo:"
@@ -197,57 +190,49 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="275dp"
-            android:layout_height="147dp"
+            android:layout_width="279dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
+                android:id="@+id/nombre_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:inputType="textPersonName" />
 
+            <EditText
                 android:id="@+id/txced"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="104dp"
-                android:layout_marginRight="40dp"
-                android:text="Dato"
-                android:textColor="@android:color/darker_gray"
+                android:ems="8"
+                android:inputType="textPersonName"
                 android:textSize="16sp" />
 
-            <TextView
-
+            <EditText
                 android:id="@+id/txcorreo"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="104dp"
-                android:layout_marginRight="104dp"
-                android:text="Dato"
-                android:textColor="@android:color/darker_gray"
+                android:ems="10"
+                android:inputType="textPersonName"
                 android:textSize="16sp" />
 
-            <TextView
-
-                android:id="@+id/txtcont"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/txcontra"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="104dp"
-                android:layout_marginRight="104dp"
-                android:text="Dato"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:textSize="16sp" />
 
-            <TextView
-
+            <EditText
                 android:id="@+id/txtipo"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="104dp"
-                android:layout_marginRight="104dp"
-                android:text="Dato"
-                android:textColor="@android:color/darker_gray"
+                android:ems="10"
+                android:inputType="textPersonName"
                 android:textSize="16sp" />
+
         </LinearLayout>
 
     </LinearLayout>
