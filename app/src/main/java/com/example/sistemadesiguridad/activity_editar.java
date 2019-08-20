@@ -91,7 +91,10 @@ public class activity_editar extends AppCompatActivity {
 
                                 activity_editar.this.startActivity(i);//Se inicia el layout bobeda y se cierra el layout actual
                                 activity_editar.this.finish();
-                                Toast.makeText(getApplicationContext(),"AAAAAAAAAAAAAAA",Toast.LENGTH_SHORT).show();
+                                 }
+                            else{
+                                activity_editar.this.startActivity(i);//Se inicia el layout administrador y se cierra el layout actual
+                                activity_editar.this.finish();
                             }
 
                         } else {
