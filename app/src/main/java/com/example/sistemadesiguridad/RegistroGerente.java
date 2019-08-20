@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegistroGerente extends StringRequest {
-    private static final String ruta="https://odinpst.000webhostapp.com/registro.php";
+    private static final String ruta="https://odinpst.000webhostapp.com/registroGerente.php";
     private Map<String, String> parametros;
 
     public RegistroGerente(String usuario, String correo, int DNI, String contraseña, String bobeda, String tipo, Response.Listener<String> listener) {

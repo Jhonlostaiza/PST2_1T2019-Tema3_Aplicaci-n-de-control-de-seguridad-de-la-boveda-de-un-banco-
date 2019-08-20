@@ -65,4 +65,12 @@ public class administrador extends AppCompatActivity {
         i.putExtra("cedula",cedula);
         startActivity(i);
     }
+
+    public void Registar_bobeda(View view) {
+        Intent i = new Intent(this, RegistrarBobeda.class );
+        i.putExtra("nombre_usuario",usuario);
+        i.putExtra("contraseña",contraseña);
+        i.putExtra("cedula",cedula);
+        startActivity(i);
+    }
 }

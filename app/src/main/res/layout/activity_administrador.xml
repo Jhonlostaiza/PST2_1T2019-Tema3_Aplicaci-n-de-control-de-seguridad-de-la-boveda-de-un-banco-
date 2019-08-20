@@ -124,7 +124,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/boton_redondo"
-                android:onClick="CerraSesion"
+                android:onClick="Registar_bobeda"
                 android:text="Registrar Bobedas"
                 android:textColor="@color/colorPrimaryDark"
                 app:backgroundTint="@color/gray"

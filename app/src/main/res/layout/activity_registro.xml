@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
     <EditText
-        android:id="@+id/usuarioE"
+        android:id="@+id/nombre"
         android:layout_width="316dp"
         android:layout_height="39dp"
         android:layout_marginStart="20dp"
@@ -42,10 +42,10 @@
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usuarioE" />
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
 
             <EditText
-                android:id="@+id/txtcontraseña"
+                android:id="@+id/estado"
                 android:layout_width="316dp"
                 android:layout_height="39dp"
                 android:layout_marginStart="20dp"
@@ -126,7 +126,7 @@
                 android:background="#B09BFFA0"
                 android:visibility="invisible"
                 app:layout_constraintStart_toEndOf="@+id/spinner2"
-                app:layout_constraintTop_toBottomOf="@+id/txtcontraseña" />
+                app:layout_constraintTop_toBottomOf="@+id/estado" />
 
             <Spinner
                 android:id="@+id/spinner2"
@@ -137,7 +137,7 @@
                 android:layout_marginTop="44dp"
                 android:background="#B09BFFA0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtcontraseña" />
+                app:layout_constraintTop_toBottomOf="@+id/estado" />
 
             <TextView
         android:id="@+id/textView11"
@@ -153,7 +153,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcontraseña"
+        app:layout_constraintTop_toBottomOf="@+id/estado"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView

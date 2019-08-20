@@ -39,7 +39,7 @@ public class activity_editar extends AppCompatActivity {
         }
 
 
-        usuarioE = (EditText) findViewById(R.id.usuarioE);
+        usuarioE = (EditText) findViewById(R.id.nombre);
         contrasenaE = (EditText) findViewById(R.id.contrasenaE);
         btnEditar = (Button) findViewById(R.id.editarbtn);
         pbr = (ProgressBar) findViewById(R.id.progressBar3);
@@ -74,7 +74,12 @@ public class activity_editar extends AppCompatActivity {
                         JSONObject jsonRespuesta = new JSONObject(response);
                         boolean ok = jsonRespuesta.getBoolean("ok");
                         if (ok == true) {
-                            Intent i = new Intent(activity_editar.this, activity_bobeda.class);
+                            Intent i;
+                            if(tipo.compareTo("gerente")==0){
+                                i = new Intent(activity_editar.this, activity_bobeda.class);
+                            }else{
+                                i = new Intent(activity_editar.this, administrador.class);
+                            }
 
                             //enviamos los datos necesarios para que inicie la sgte actividad
                             i.putExtra("nombre_usuario",usuarioIntent);

@@ -2,30 +2,20 @@ package com.example.sistemadesiguridad;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.sistemadesiguridad.Entidades.bobeda_datos;
-import com.example.sistemadesiguridad.adaptadores.bobeda_adaptador;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -43,10 +33,10 @@ public class activity_registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         //Obtenemos los edittext del
-        final EditText usuarioN = (EditText) findViewById(R.id.usuarioE);
+        final EditText usuarioN = (EditText) findViewById(R.id.nombre);
         final EditText correoN = (EditText) findViewById(R.id.correo);
         final EditText DNIN = (EditText) findViewById(R.id.DNI);
-        final EditText contraseñaN = (EditText) findViewById(R.id.txtcontraseña);
+        final EditText contraseñaN = (EditText) findViewById(R.id.estado);
         Button btnRegistro = (Button) findViewById(R.id.crear);
         opciones =(Spinner)findViewById(R.id.spinner2);
         bobedas = (Spinner)findViewById(R.id.bobedas);
