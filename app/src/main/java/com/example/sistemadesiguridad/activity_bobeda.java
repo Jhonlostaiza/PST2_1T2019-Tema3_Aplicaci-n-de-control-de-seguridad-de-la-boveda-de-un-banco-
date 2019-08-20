@@ -20,7 +20,7 @@ import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 public class activity_bobeda extends AppCompatActivity {
-    private String usuario, cedula;
+    private String usuario, contraseña,cedula;
     private String id_bobeda, estado;
     private int estadoInt, id_bobedaInt;
     private TextView txtv_usuario, txtv_cedula, txtvId_bobeda, txtv_estado;
@@ -31,6 +31,7 @@ public class activity_bobeda extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras(); //obtener información del activity anterior
         usuario = bundle.getString("nombre_usuario");
+        contraseña = bundle.getString("contraseña");
         cedula = bundle.getString("cedula");
         id_bobeda = bundle.getString("id_bobeda");
         id_bobedaInt = Integer.parseInt(id_bobeda);
@@ -42,7 +43,7 @@ public class activity_bobeda extends AppCompatActivity {
 
 
         txtv_usuario = (TextView)findViewById(R.id.nombre_usuario); //mostramos la información del usuario
-        txtv_cedula = (TextView)findViewById(R.id.cod_usuario);
+        txtv_cedula = (TextView)findViewById(R.id.txcorreo);
         txtvId_bobeda = (TextView)findViewById(R.id.textView6);
         txtv_estado = (TextView)findViewById(R.id.estado_puerta);
         sem_estado = (ImageView)findViewById(R.id.semaforo_estado);
@@ -61,12 +62,15 @@ public class activity_bobeda extends AppCompatActivity {
 
     public void Editar(View view) {
         Intent i = new Intent(this, activity_editar.class );
+        i.putExtra("nombre_usuario",usuario);
+        i.putExtra("clave",contraseña);
         startActivity(i);
     }
 
     public void CerraSesion(View view) {
         Intent i = new Intent(this, MainActivity.class );
         startActivity(i);
+        activity_bobeda.this.finish();
     }
     public void abrirpuerta(View view){
         final int abrir=1;//ingresa la condicion de apertura de la puerta
@@ -74,26 +78,7 @@ public class activity_bobeda extends AppCompatActivity {
             Toast.makeText(this, "bobeda ya abierta, intente otro comando", Toast.LENGTH_SHORT).show();
         }else{
 
-            //activamos el semaforo que indica el cambio de estado
-            sem_estado.setImageResource(R.drawable.estado_trancision);
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    sem_estado.setImageResource(R.drawable.estado_open);
-                    txtv_estado.setText("Estado: Puerta abierta");
-                    //toast indicando la realizacion del proceso
-                    Toast.makeText(getApplicationContext(), "Bóbeda abierta", Toast.LENGTH_SHORT).show();
-                }
-            },1500);
 
-            //Cambiamos TextView que indica el estado
-            txtv_estado.setText("Estado: abriendo...");
-
-
-            //cambiamos los valores de las variables
-            estado = "1";
-            estadoInt=1;
 
             Response.Listener<String> respuesta = new Response.Listener<String>() {
                 @Override
@@ -102,7 +87,26 @@ public class activity_bobeda extends AppCompatActivity {
                         JSONObject jsonRespuesta = new JSONObject(response);
                         boolean ok = jsonRespuesta.getBoolean("sucess");//si se logro el cambio dentro de la base de datos se procede 
                         if (ok == true){
+                            //activamos el semaforo que indica el cambio de estado
+                            sem_estado.setImageResource(R.drawable.estado_trancision);
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    sem_estado.setImageResource(R.drawable.estado_open);
+                                    txtv_estado.setText("Estado: Puerta abierta");
+                                    //toast indicando la realizacion del proceso
+                                    Toast.makeText(getApplicationContext(), "Bóbeda abierta", Toast.LENGTH_SHORT).show();
+                                }
+                            },1500);
 
+                            //Cambiamos TextView que indica el estado
+                            txtv_estado.setText("Estado: abriendo...");
+
+
+                            //cambiamos los valores de las variables
+                            estado = "1";
+                            estadoInt=1;
 
                         } else {
                             AlertDialog.Builder alerta = new AlertDialog.Builder(activity_bobeda.this);//si el respuesta sucess de la base es false no existe el usuario en la base de datos y se envia el mensaje de alerta
@@ -124,28 +128,6 @@ public class activity_bobeda extends AppCompatActivity {
             Toast.makeText(this, "Bóbeda ya cerrada, intente otro comando", Toast.LENGTH_SHORT).show();
         }else{
 
-            //activamos el semaforo que indica el cambio de estado
-            sem_estado.setImageResource(R.drawable.estado_trancision);
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    sem_estado.setImageResource(R.drawable.estado_close);
-                    txtv_estado.setText("Estado: Puerta cerrada");
-                    //toast indicando la realizacion del proceso
-                    Toast.makeText(getApplicationContext(), "Bóbeda cerrada", Toast.LENGTH_SHORT).show();
-                }
-            },1500);
-
-            //Cambiamos TextView que indica el estado
-            txtv_estado.setText("Estado: cerrando...");
-
-            //cambiamos los valores de las variables
-            estado = "0";
-            estadoInt=0;
-
-
-
 
 
             //Envío de la informacion a la nube
@@ -156,7 +138,28 @@ public class activity_bobeda extends AppCompatActivity {
                         JSONObject jsonRespuesta = new JSONObject(response);
                         boolean ok = jsonRespuesta.getBoolean("sucess");
                         if (ok == true){
-                            //
+
+                            //activamos el semaforo que indica el cambio de estado
+                            sem_estado.setImageResource(R.drawable.estado_trancision);
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    sem_estado.setImageResource(R.drawable.estado_close);
+                                    txtv_estado.setText("Estado: Puerta cerrada");
+                                    //toast indicando la realizacion del proceso
+                                    Toast.makeText(getApplicationContext(), "Bóbeda cerrada", Toast.LENGTH_SHORT).show();
+                                }
+                            },1500);
+
+                            //Cambiamos TextView que indica el estado
+                            txtv_estado.setText("Estado: cerrando...");
+
+                            //cambiamos los valores de las variables
+                            estado = "0";
+                            estadoInt=0;
+
+
 
 
                         } else {

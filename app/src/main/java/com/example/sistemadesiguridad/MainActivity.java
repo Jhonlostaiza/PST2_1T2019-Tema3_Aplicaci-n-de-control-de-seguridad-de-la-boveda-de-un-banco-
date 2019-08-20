@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                         bobeda.putExtra("cedula",jsonRespuesta.getString("cedula"));
                                         bobeda.putExtra("id_bobeda",jsonRespuesta.getString("id_bobeda"));
                                         bobeda.putExtra("estado",jsonRespuesta.getString("estado"));
+                                        bobeda.putExtra("contraseña",clave);
 
                                         //bobeda.putExtra("id_bobeda",jsonRespuesta.getInt("id_bobeda"));
                                         //bobeda.putExtra("estado",jsonRespuesta.getInt("estado"));

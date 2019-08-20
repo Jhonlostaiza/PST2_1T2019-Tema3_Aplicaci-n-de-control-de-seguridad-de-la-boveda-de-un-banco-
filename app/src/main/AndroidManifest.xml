@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:windowSoftInputMode="stateHidden|adjustResize">
-        <activity android:name=".VisorUsuario"></activity>
+        <activity android:name=".informe"></activity>
+        <activity android:name=".VisorUsuario" />
         <activity android:name=".AdministradorBobeda" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Usuarios" />
